@@ -1,0 +1,45 @@
+DIN 912 M4 press-on wing cap — millimetres
+
+Files: M4_DIN912_thumb_cap.step is the main deliverable. STL is optional.
+M4_fit_test.step/STL is a smaller test cap with identical socket and retention geometry.
+
+Assumed screw: standard DIN 912 M4, nominal head diameter 7 mm, height 4 mm,
+hex socket 3 mm AF. Not for button heads, low heads or countersunk screws.
+Slides axially over the head from its exposed face; align the peg with the socket.
+
+COOLED TARGET DIMENSIONS (prior to compensation)
+Wing envelope: 28 x 12 x 7.6 mm, rounded edges R0.5.
+Head pocket: diameter 7.18 mm, depth 3.6 mm, entry flare to diameter 7.98.
+Three rounded ribs at 120 degrees: minimum effective diameter 6.92 mm.
+Nominal radial interference at ribs: 0.04 mm on a 7.00 mm head.
+Pocket surrounds only the upper 3.6 mm of the 4 mm head so the rim clears
+its mounting surface by nominally 0.4 mm when seated.
+Hex peg: 2.94 mm AF, protrudes 1.8 mm from roof, last 0.3 mm tapered
+to 2.45 mm AF. Clearance fit transmits torque; retention is on the head OD.
+
+COMPENSATION
+All geometry is scaled by 1/0.998 for an assumed 0.2% linear PLA shrinkage.
+Exported nominal envelope: 28.056 x 12.024 x 7.615 mm (CAD bounding tolerances
+may add a few microns). Rib effective diameter in CAD 6.934 mm;
+pocket 7.194 mm; peg 2.946 mm AF.
+This is a starting allowance, not a measured calibration for your spool/H2D.
+Small-hole extrusion bias and screw manufacturing tolerance can exceed the
+shrinkage adjustment. Do not add another global shrink scale in the slicer.
+
+BAMBU H2D / PLA BASIC
+Use a 0.4 mm nozzle, calibrated PLA Basic profile, 0.16 mm layers, 4 walls,
+5 top/bottom layers, 30-40% infill. Print the flat exterior face at Z=0 on the
+bed, pocket and peg pointing up. No supports. Use normal elephant-foot
+compensation; avoid XY/hole compensation initially because it changes the fit.
+Print the fit-test cap first and let it cool fully. Align the hex before
+pressing by hand. If too tight, remove and lightly dress only the ribs;
+do not force the PLA hex into a misaligned socket. If loose, adjust the rib
+parameter in the source by 0.04-0.08 mm in effective diameter, not whole-part scale.
+The CAD-generation script is supplied for dimensional edits (requires CadQuery).
+
+For light finger adjustment. PLA socket drives can strip under high torque;
+no tightening torque rating is claimed. Not a substitute for a torque wrench
+where the M4 joint requires a specified preload. Retention and torque capacity
+have not been physically tested; PLA can creep or soften in hot conditions.
+
+CAD validation: each STEP reimported successfully as one valid solid.
