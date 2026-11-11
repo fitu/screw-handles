@@ -3,16 +3,25 @@
   "CAD_scale_factor": 1.016260162601626,
   "cooled_target_OD_mm": 15.0,
   "knurl_grooves": 30,
-  "cooled_rib_effective_ID_mm": 6.88,
-  "nominal_head_OD_mm": 7.0,
-  "cooled_diametral_interference_mm": 0.12,
+  "cooled_rib_effective_ID_mm": 6.74,
+  "finished_rib_effective_ID_max_mm": 6.760000000000001,
+  "cooled_head_pocket_ID_mm": 7.4,
+  "head_OD_min_mm": 6.78,
+  "head_OD_max_plain_mm": 7.0,
+  "head_OD_max_knurled_mm": 7.22,
+  "minimum_required_diametral_interference_mm": 0.02,
+  "minimum_target_diametral_interference_mm": 0.04,
+  "target_interference_at_plain_max_mm": 0.26,
+  "target_interference_at_knurled_max_mm": 0.48,
+  "cap_positive_diameter_allowance_mm": 0.02,
+  "physical_fit_verified": false,
   "M4_DIN912_thumb_cap": {
     "size_mm": [
       15.224149949328226,
       15.247873426261203,
-      7.732130043131836
+      7.732269005190696
     ],
-    "volume_mm3": 1180.838083418048,
+    "volume_mm3": 1172.3415427756831,
     "valid_STEP_roundtrip": true,
     "solid_count": 1
   },
@@ -20,9 +29,9 @@
     "size_mm": [
       11.182336583324211,
       11.178861991869923,
-      7.730102609324997
+      7.730241571383858
     ],
-    "volume_mm3": 617.4929989500629,
+    "volume_mm3": 608.9964948733584,
     "valid_STEP_roundtrip": true,
     "solid_count": 1
   }

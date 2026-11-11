@@ -1,52 +1,64 @@
-DIN 912 M4 knurled round screw cap — millimetres
+DIN 912 M4 knurled screw cap — millimetres
 
-Revision: 15 mm cooled target round knob, 30 axial knurl grooves,
-user-requested 1.6% uniform linear PLA shrinkage compensation.
-Rib-to-head overlap: nominal 0.12 mm diametral, within the requested 0.10-0.15 mm range.
+Revision: 15 mm cooled target knob, 30 straight knurl grooves,
+1.6% linear PLA shrinkage compensation, ribs sized for minimum head diameter.
 
-Files: M4_DIN912_thumb_cap.step is the main deliverable; STL is optional.
-M4_fit_test.step/STL is a smaller cap with the same head pocket and peg.
+VERIFIED HEAD LIMITS
+Smooth head diameter: 6.78 to 7.00 mm.
+Knurled screw head maximum diameter: 7.22 mm; minimum remains 6.78 mm.
+Head height: 3.82 to 4.00 mm; nominal hex socket 3 mm AF.
+Sources:
+https://eshop.boellhoff.de/out/media/pdf/DIN_912_Stahl_10.9___en.pdf
+https://www.hjfasteners.com/userfiles/Fl202205302235287842.pdf
 
-SCREW AND INSTALLATION
-Standard DIN 912 M4: nominal head diameter 7 mm, height 4 mm, hex socket 3 mm AF.
-Align the hex peg and push the cap axially onto the exposed head.
-The cap surrounds the upper 3.6 mm of the head, leaving nominally 0.4 mm
-clearance above the mounting surface at the rim when seated.
-Three ribs retain the cap on the head OD; the hex peg transmits torque.
+RIB TARGET AND FINISHED ACCEPTANCE
+Cooled effective rib diameter target: 6.74 mm.
+Finished acceptance maximum: 6.76 mm, allowing +0.02 mm process variation.
+For a 6.78 mm minimum head: target interference 0.04 mm diametral;
+accepted finished geometry gives at least 0.02 mm diametral interference.
 
-COOLED TARGET DIMENSIONS
-Maximum diameter 15 mm; height 7.6 mm; rounded exterior edges R0.5 mm.
-30 axial grooves: circular cutter diameter 0.9 mm, centered at radius 7.45 mm;
-radial groove depth approximately 0.5 mm. Grooves print vertically without supports.
-Head pocket diameter 7.18 mm, depth 3.6 mm; entry flare diameter 7.98 mm.
-Effective diameter at retention ribs 6.88 mm; nominal interference
-0.12 mm diametrally (0.06 mm radially) on a 7.00 mm head.
-The fit-test cap uses the same 6.88 mm cooled target rib diameter.
-Hex peg AF 2.94 mm; insertion depth 1.8 mm; final 0.3 mm tapers to AF 2.45 mm.
+Head diameter | Target interference | Interference at acceptance maximum
+6.78 mm       | 0.04 mm diametral  | 0.02 mm diametral
+7.00 mm       | 0.26 mm diametral  | 0.24 mm diametral
+7.22 mm       | 0.48 mm diametral  | 0.46 mm diametral
+Radial interference is half these values.
 
-SHRINKAGE COMPENSATION
-Uniform X/Y/Z factor 1/(1-0.016) = 1.01626016. Exported dimensions:
-Maximum diameter 15.244 mm; height 7.724 mm.
-Head pocket diameter 7.297 mm; depth 3.659 mm; entry diameter 8.110 mm.
-Effective rib diameter 6.992 mm; hex peg AF 2.988 mm; insertion 1.829 mm.
-All fit dimensions are compensated along with the body.
-The 1.6% figure is user-specified and not validated by a physical print.
-If actual shrinkage is lower, the cap may fit loosely.
-Do not apply a second shrinkage compensation in the slicer or filament profile.
-Printer small-hole bias and screw manufacturing tolerances also affect fit.
+The 0.02 mm minimum requires verifying the cooled effective opening is at
+most 6.76 mm. It is not guaranteed by an unmeasured print. Shrinkage variation
+and printing error must remain within the +0.02 mm opening allowance.
+Larger heads require more rib displacement. Insertion force and durability
+have not been measured. The fit-test cap has the same pocket, ribs and peg.
 
-BAMBU H2D / PLA BASIC
-0.4 mm nozzle; calibrated PLA Basic profile; 0.16 mm layers; 4 walls;
-5 top/bottom layers; 30–40% infill. Flat exterior face down at Z=0,
-pocket and peg upward. No supports. Print at 100% scale.
-Normal elephant-foot compensation; start without added XY/hole compensation.
-Print the fit-test cap first, cool fully, align hex, and press on by hand.
-If tight, lightly dress only the retention ribs. Do not force a misaligned peg.
-If loose, tune the rib effective diameter in design.py in small steps;
-do not change whole-part scale to adjust retention.
+COOLED GEOMETRY
+Knob maximum diameter 15 mm; height 7.6 mm; exterior edge radius 0.5 mm.
+30 axial grip grooves: 0.9 mm cutter diameter, center radius 7.45 mm.
+Head pocket diameter 7.40 mm, depth 3.6 mm; entry flare diameter 8.20 mm.
+The pocket clears the 7.22 mm maximum knurled screw head away from the ribs.
+Three ribs at 120 degrees; rounded radius 0.38 mm; 2.8 mm constant section,
+then individual 0.4 mm conical ramps tapering toward the pocket entrance.
+Hex peg AF 2.94 mm; insertion 1.8 mm; final 0.3 mm tapers to AF 2.45 mm.
+The rim surrounds the upper 3.6 mm of the head, leaving at least 0.22 mm
+nominal mounting-surface clearance for a 3.82 mm minimum-height head.
 
-For light finger adjustment. No tightening torque rating is claimed.
-PLA can strip, creep or soften at elevated temperatures.
-Not physically tested; use specified tooling for joints requiring controlled preload.
+COMPENSATED CAD DIMENSIONS
+Uniform X/Y/Z factor 1/(1-0.016) = 1.01626016.
+Knob maximum diameter 15.244 mm; height 7.724 mm.
+Head pocket diameter 7.520 mm; depth 3.659 mm; entry diameter 8.333 mm.
+Effective rib diameter 6.849594 mm; hex peg AF 2.988 mm; insertion 1.829 mm.
+The 1.6% shrinkage is user-specified, not verified by a physical print.
+Do not apply a second shrinkage scale in the slicer or filament profile.
 
-Validation: each STEP exported and reimported as one valid solid.
+PRINT / INSTALL
+Bambu H2D; PLA Basic; calibrated profile; 0.4 mm nozzle; 0.16 mm layers;
+4 walls; 5 top/bottom layers; 30–40% infill. Flat exterior face on the bed,
+pocket and peg upward; no supports. Print at 100% scale.
+Print the fit-test cap first and let it cool fully. Verify effective rib
+opening and fit. Align hex before pressing on by hand; avoid forcing a
+misaligned peg. If fit needs changing, adjust the rib parameter rather than
+whole-part scale, and recheck the minimum-head interference requirement.
+
+For light finger adjustment. No rated insertion force, durability or
+tightening torque. Fit has not been physically validated. PLA can strip,
+creep or soften at elevated temperatures.
+
+Validation: STEP exports are checked as single valid solids and reimported.
