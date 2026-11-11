@@ -2,15 +2,22 @@ import cadquery as cq, math, json
 from pathlib import Path
 out=Path(__file__).resolve().parent / 'generated'
 out.mkdir(parents=True, exist_ok=True)
-S=1/0.998
+SHRINKAGE = 0.016  # User-specified linear shrinkage, 1.6%
+S = 1 / (1 - SHRINKAGE)
 # All design dimensions below are desired cooled dimensions; scale at export.
 def hexpts(af):
  r=af/math.sqrt(3)
  return [(r*math.cos(i*math.pi/3),r*math.sin(i*math.pi/3)) for i in range(6)]
-def cap(wing=True, rib_id=6.92):
- if wing:
-  body=cq.Workplane('XY').slot2D(28,12).extrude(7.6)
+def cap(knurled=True, rib_id=6.92):
+ if knurled:
+  # 20 mm cooled maximum diameter, with 40 support-free axial grip grooves.
+  body=cq.Workplane('XY').circle(10).extrude(7.6)
   body=body.edges('>Z or <Z').fillet(.5)
+  centers=[(9.95*math.cos(2*math.pi*i/40),
+            9.95*math.sin(2*math.pi*i/40)) for i in range(40)]
+  cutters=(cq.Workplane('XY').workplane(offset=-.1)
+           .pushPoints(centers).circle(.45).extrude(7.8))
+  body=body.cut(cutters)
  else:
   body=cq.Workplane('XY').circle(5.5).extrude(7.6)
  # head-side pocket: roof at 4, lip at 7.6; leaves screw underside 0.4 proud
@@ -30,15 +37,15 @@ def cap(wing=True, rib_id=6.92):
  peg=(cq.Workplane('XY').workplane(offset=3.95).polyline(hexpts(2.94)).close().extrude(1.55))
  tip=(cq.Workplane('XY').workplane(offset=5.5).polyline(hexpts(2.94)).close().workplane(offset=.3).polyline(hexpts(2.45)).close().loft())
  return body.union(peg).union(tip).clean().val().scale(S)
-results={}
-for name,wing in [('M4_DIN912_thumb_cap',True),('M4_fit_test',False)]:
- shape=cap(wing)
+results={'linear_shrinkage': SHRINKAGE, 'CAD_scale_factor': S}
+for name,knurled in [('M4_DIN912_thumb_cap',True),('M4_fit_test',False)]:
+ shape=cap(knurled)
  assert shape.isValid() and len(shape.Solids())==1
  cq.exporters.export(shape,str(out/(name+'.step')))
  cq.exporters.export(shape,str(out/(name+'.stl')),tolerance=.015,angularTolerance=.1)
  reread=cq.importers.importStep(str(out/(name+'.step'))).val()
  assert reread.isValid() and len(reread.Solids())==1
  b=shape.BoundingBox()
- results[name]={'size_mm':[b.xlen,b.ylen,b.zlen],'volume_mm3':shape.Volume(),'valid_STEP_roundtrip':True}
+ results[name]={'size_mm':[b.xlen,b.ylen,b.zlen],'volume_mm3':shape.Volume(),'valid_STEP_roundtrip':True, 'solid_count':len(shape.Solids())}
 (out/'validation.json').write_text(json.dumps(results,indent=2))
 print(json.dumps(results,indent=2))

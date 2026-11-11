@@ -1,20 +1,24 @@
 {
+  "linear_shrinkage": 0.016,
+  "CAD_scale_factor": 1.016260162601626,
   "M4_DIN912_thumb_cap": {
     "size_mm": [
-      28.05641396607235,
-      12.028087128387186,
-      7.62197078721993
+      20.30831565411001,
+      20.30831565409322,
+      7.730135082994868
     ],
-    "volume_mm3": 2190.4159739823044,
-    "valid_STEP_roundtrip": true
+    "volume_mm3": 2247.3443218739726,
+    "valid_STEP_roundtrip": true,
+    "solid_count": 1
   },
   "M4_fit_test": {
     "size_mm": [
-      11.025470138267556,
-      11.022044288577156,
-      7.621664296168132
+      11.182336583324211,
+      11.178861991869923,
+      7.730102609324997
     ],
-    "volume_mm3": 591.7590871092659,
-    "valid_STEP_roundtrip": true
+    "volume_mm3": 617.378163144165,
+    "valid_STEP_roundtrip": true,
+    "solid_count": 1
   }
 }
