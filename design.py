@@ -8,13 +8,13 @@ S = 1 / (1 - SHRINKAGE)
 def hexpts(af):
  r=af/math.sqrt(3)
  return [(r*math.cos(i*math.pi/3),r*math.sin(i*math.pi/3)) for i in range(6)]
-def cap(knurled=True, rib_id=6.92):
+def cap(knurled=True, rib_id=6.88):
  if knurled:
-  # 20 mm cooled maximum diameter, with 40 support-free axial grip grooves.
-  body=cq.Workplane('XY').circle(10).extrude(7.6)
+  # 15 mm cooled maximum diameter, with 30 support-free axial grip grooves.
+  body=cq.Workplane('XY').circle(7.5).extrude(7.6)
   body=body.edges('>Z or <Z').fillet(.5)
-  centers=[(9.95*math.cos(2*math.pi*i/40),
-            9.95*math.sin(2*math.pi*i/40)) for i in range(40)]
+  centers=[(7.45*math.cos(2*math.pi*i/30),
+            7.45*math.sin(2*math.pi*i/30)) for i in range(30)]
   cutters=(cq.Workplane('XY').workplane(offset=-.1)
            .pushPoints(centers).circle(.45).extrude(7.8))
   body=body.cut(cutters)
@@ -26,7 +26,7 @@ def cap(knurled=True, rib_id=6.92):
  # 0.4 x 45 degree lead-in at cavity mouth
  lead=cq.Solid.makeCone(3.59,3.99,.4,cq.Vector(0,0,7.2))
  body=body.cut(lead)
- # Three rounded, locally yielding ribs. 0.04 mm radial interference on nominal head.
+ # Three rounded, locally yielding ribs. 0.12 mm diametral / 0.06 mm radial interference on nominal head.
  rr=.38; rc=rib_id/2+rr
  for a in [0,120,240]:
   x,y=rc*math.cos(math.radians(a)),rc*math.sin(math.radians(a))
@@ -37,7 +37,10 @@ def cap(knurled=True, rib_id=6.92):
  peg=(cq.Workplane('XY').workplane(offset=3.95).polyline(hexpts(2.94)).close().extrude(1.55))
  tip=(cq.Workplane('XY').workplane(offset=5.5).polyline(hexpts(2.94)).close().workplane(offset=.3).polyline(hexpts(2.45)).close().loft())
  return body.union(peg).union(tip).clean().val().scale(S)
-results={'linear_shrinkage': SHRINKAGE, 'CAD_scale_factor': S}
+results={'linear_shrinkage': SHRINKAGE, 'CAD_scale_factor': S,
+         'cooled_target_OD_mm':15.0, 'knurl_grooves':30,
+         'cooled_rib_effective_ID_mm':6.88,
+         'nominal_head_OD_mm':7.0, 'cooled_diametral_interference_mm':0.12}
 for name,knurled in [('M4_DIN912_thumb_cap',True),('M4_fit_test',False)]:
  shape=cap(knurled)
  assert shape.isValid() and len(shape.Solids())==1

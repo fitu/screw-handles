@@ -1,8 +1,8 @@
 DIN 912 M4 knurled round screw cap — millimetres
 
-Revision: 20 mm cooled target round knob, 40 axial knurl grooves,
+Revision: 15 mm cooled target round knob, 30 axial knurl grooves,
 user-requested 1.6% uniform linear PLA shrinkage compensation.
-Replaces the earlier wing handle and 0.2% allowance.
+Rib-to-head overlap: nominal 0.12 mm diametral, within the requested 0.10-0.15 mm range.
 
 Files: M4_DIN912_thumb_cap.step is the main deliverable; STL is optional.
 M4_fit_test.step/STL is a smaller cap with the same head pocket and peg.
@@ -15,19 +15,20 @@ clearance above the mounting surface at the rim when seated.
 Three ribs retain the cap on the head OD; the hex peg transmits torque.
 
 COOLED TARGET DIMENSIONS
-Maximum diameter 20 mm; height 7.6 mm; rounded exterior edges R0.5 mm.
-40 axial grooves: circular cutter diameter 0.9 mm, centered at radius 9.95 mm;
+Maximum diameter 15 mm; height 7.6 mm; rounded exterior edges R0.5 mm.
+30 axial grooves: circular cutter diameter 0.9 mm, centered at radius 7.45 mm;
 radial groove depth approximately 0.5 mm. Grooves print vertically without supports.
 Head pocket diameter 7.18 mm, depth 3.6 mm; entry flare diameter 7.98 mm.
-Effective diameter at retention ribs 6.92 mm; nominal radial interference
-0.04 mm on a 7.00 mm head.
+Effective diameter at retention ribs 6.88 mm; nominal interference
+0.12 mm diametrally (0.06 mm radially) on a 7.00 mm head.
+The fit-test cap uses the same 6.88 mm cooled target rib diameter.
 Hex peg AF 2.94 mm; insertion depth 1.8 mm; final 0.3 mm tapers to AF 2.45 mm.
 
 SHRINKAGE COMPENSATION
 Uniform X/Y/Z factor 1/(1-0.016) = 1.01626016. Exported dimensions:
-Maximum diameter 20.325 mm; height 7.724 mm.
+Maximum diameter 15.244 mm; height 7.724 mm.
 Head pocket diameter 7.297 mm; depth 3.659 mm; entry diameter 8.110 mm.
-Effective rib diameter 7.033 mm; hex peg AF 2.988 mm; insertion 1.829 mm.
+Effective rib diameter 6.992 mm; hex peg AF 2.988 mm; insertion 1.829 mm.
 All fit dimensions are compensated along with the body.
 The 1.6% figure is user-specified and not validated by a physical print.
 If actual shrinkage is lower, the cap may fit loosely.

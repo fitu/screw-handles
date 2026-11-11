@@ -1,13 +1,18 @@
 {
   "linear_shrinkage": 0.016,
   "CAD_scale_factor": 1.016260162601626,
+  "cooled_target_OD_mm": 15.0,
+  "knurl_grooves": 30,
+  "cooled_rib_effective_ID_mm": 6.88,
+  "nominal_head_OD_mm": 7.0,
+  "cooled_diametral_interference_mm": 0.12,
   "M4_DIN912_thumb_cap": {
     "size_mm": [
-      20.30831565411001,
-      20.30831565409322,
-      7.730135082994868
+      15.224149949328226,
+      15.247873426261203,
+      7.732130043131836
     ],
-    "volume_mm3": 2247.3443218739726,
+    "volume_mm3": 1180.838083418048,
     "valid_STEP_roundtrip": true,
     "solid_count": 1
   },
@@ -17,7 +22,7 @@
       11.178861991869923,
       7.730102609324997
     ],
-    "volume_mm3": 617.378163144165,
+    "volume_mm3": 617.4929989500629,
     "valid_STEP_roundtrip": true,
     "solid_count": 1
   }
