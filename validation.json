@@ -1,38 +1,101 @@
 {
-  "linear_shrinkage": 0.016,
-  "CAD_scale_factor": 1.016260162601626,
-  "cooled_target_OD_mm": 15.0,
-  "knurl_grooves": 30,
-  "cooled_rib_effective_ID_mm": 6.74,
-  "finished_rib_effective_ID_max_mm": 6.760000000000001,
-  "cooled_head_pocket_ID_mm": 7.4,
-  "head_OD_min_mm": 6.78,
-  "head_OD_max_plain_mm": 7.0,
-  "head_OD_max_knurled_mm": 7.22,
-  "minimum_required_diametral_interference_mm": 0.02,
-  "minimum_target_diametral_interference_mm": 0.04,
-  "target_interference_at_plain_max_mm": 0.26,
-  "target_interference_at_knurled_max_mm": 0.48,
-  "cap_positive_diameter_allowance_mm": 0.02,
-  "physical_fit_verified": false,
+  "units": "mm",
+  "shrinkage_compensation": false,
+  "CAD_scale_factor": 1.0,
+  "nominal_OD_mm": 20.0,
+  "nominal_bore_ID_mm": 7.5,
+  "height_mm": 7.6,
+  "pocket_floor_z_mm": 4.0,
+  "chamfer_start_z_mm": 7.199999999999999,
+  "rib_bottom_ID_mm": 6.65,
+  "rib_draft_degrees": 3.0,
+  "rib_end_z_mm": 6.999999999999999,
+  "rib_to_chamfer_gap_mm": 0.2,
+  "rib_top_ID_mm": 6.964446675698247,
+  "hex_AF_mm": 3.02,
+  "knurl_grooves": 40,
   "M4_DIN912_thumb_cap": {
     "size_mm": [
-      15.224149949328226,
-      15.247873426261203,
-      7.732269005190696
+      19.983350233268112,
+      19.98335023325167,
+      7.60663562908381
     ],
-    "volume_mm3": 1172.3415427756831,
+    "volume_mm3": 2129.6171835891873,
     "valid_STEP_roundtrip": true,
-    "solid_count": 1
+    "solid_count": 1,
+    "rib_sections": [
+      {
+        "z_mm": 4.001,
+        "measured_rib_IDs_mm": [
+          6.650104815558566,
+          6.6501048155579685,
+          6.650104815557968
+        ]
+      },
+      {
+        "z_mm": 5.5,
+        "measured_rib_IDs_mm": [
+          6.807223337849124,
+          6.807223337848525,
+          6.807223337848526
+        ]
+      },
+      {
+        "z_mm": 6.998999999999999,
+        "measured_rib_IDs_mm": [
+          6.964341860139681,
+          6.964341860139084,
+          6.964341860139083
+        ]
+      }
+    ],
+    "clear_band_bore_IDs_mm": [
+      7.5,
+      7.499999999999999,
+      7.5
+    ],
+    "measured_hex_AF_mm": 3.02
   },
   "M4_fit_test": {
     "size_mm": [
-      11.182336583324211,
-      11.178861991869923,
-      7.730241571383858
+      11.003419197991024,
+      11.000000200000002,
+      7.606619860180769
     ],
-    "volume_mm3": 608.9964948733584,
+    "volume_mm3": 576.6442628185789,
     "valid_STEP_roundtrip": true,
-    "solid_count": 1
+    "solid_count": 1,
+    "rib_sections": [
+      {
+        "z_mm": 4.001,
+        "measured_rib_IDs_mm": [
+          6.650104815558566,
+          6.6501048155579685,
+          6.650104815557968
+        ]
+      },
+      {
+        "z_mm": 5.5,
+        "measured_rib_IDs_mm": [
+          6.807223337849124,
+          6.807223337848525,
+          6.807223337848526
+        ]
+      },
+      {
+        "z_mm": 6.998999999999999,
+        "measured_rib_IDs_mm": [
+          6.964341860139681,
+          6.964341860139084,
+          6.964341860139083
+        ]
+      }
+    ],
+    "clear_band_bore_IDs_mm": [
+      7.5,
+      7.499999999999999,
+      7.5
+    ],
+    "measured_hex_AF_mm": 3.02
   }
 }

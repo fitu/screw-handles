@@ -1,64 +1,36 @@
-DIN 912 M4 knurled screw cap — millimetres
+DIN 912 M4 knurled cap — nominal CAD dimensions, mm
 
-Revision: 15 mm cooled target knob, 30 straight knurl grooves,
-1.6% linear PLA shrinkage compensation, ribs sized for minimum head diameter.
+No shrinkage compensation. No global scaling. This revision supersedes
+all earlier compensated dimensions and rib acceptance limits.
 
-VERIFIED HEAD LIMITS
-Smooth head diameter: 6.78 to 7.00 mm.
-Knurled screw head maximum diameter: 7.22 mm; minimum remains 6.78 mm.
-Head height: 3.82 to 4.00 mm; nominal hex socket 3 mm AF.
-Sources:
-https://eshop.boellhoff.de/out/media/pdf/DIN_912_Stahl_10.9___en.pdf
-https://www.hjfasteners.com/userfiles/Fl202205302235287842.pdf
+OD 20.00 at knurl lands; head bore ID 7.50 away from ribs.
+Three ribs at 120 degrees; bottom effective ID 6.65 at the pocket floor.
+Rib draft 3 degrees towards a wider opening, over a 3.00 mm rib height.
+Effective ID at rib free ends: 6.96445.
+Bottom rib radius 0.38; free-end radius 0.22278, fixed radial centre 3.705.
+Each rib is a cone frustum; inner contact face has the requested 3 degree draft.
 
-RIB TARGET AND FINISHED ACCEPTANCE
-Cooled effective rib diameter target: 6.74 mm.
-Finished acceptance maximum: 6.76 mm, allowing +0.02 mm process variation.
-For a 6.78 mm minimum head: target interference 0.04 mm diametral;
-accepted finished geometry gives at least 0.02 mm diametral interference.
+Overall height 7.60. Pocket floor Z=4.00. Pocket depth 3.60.
+Ribs end at Z=7.00. Chamfer starts Z=7.20: 0.20 mm axial clear space.
+Clear space has full bore ID 7.50. Mouth chamfer 0.40 x 45 degrees;
+mouth ID 8.30 at Z=7.60. Ribs do not enter the chamfer or clear band.
 
-Head diameter | Target interference | Interference at acceptance maximum
-6.78 mm       | 0.04 mm diametral  | 0.02 mm diametral
-7.00 mm       | 0.26 mm diametral  | 0.24 mm diametral
-7.22 mm       | 0.48 mm diametral  | 0.46 mm diametral
-Radial interference is half these values.
+Hex driving section AF 3.02; protrusion from pocket floor 1.80.
+Final 0.30 tapers to AF 2.53 for entry. All dimensions are unscaled.
+40 straight knurl grooves, 0.90 cutter diameter at radius 9.95;
+outer edge rounding R0.50.
 
-The 0.02 mm minimum requires verifying the cooled effective opening is at
-most 6.76 mm. It is not guaranteed by an unmeasured print. Shrinkage variation
-and printing error must remain within the +0.02 mm opening allowance.
-Larger heads require more rib displacement. Insertion force and durability
-have not been measured. The fit-test cap has the same pocket, ribs and peg.
+Fit-test model has the same bore, drafted ribs, clear band and hex.
+Main model: M4_DIN912_thumb_cap.step / .stl
+Fit-test: M4_fit_test.step / .stl
 
-COOLED GEOMETRY
-Knob maximum diameter 15 mm; height 7.6 mm; exterior edge radius 0.5 mm.
-30 axial grip grooves: 0.9 mm cutter diameter, center radius 7.45 mm.
-Head pocket diameter 7.40 mm, depth 3.6 mm; entry flare diameter 8.20 mm.
-The pocket clears the 7.22 mm maximum knurled screw head away from the ribs.
-Three ribs at 120 degrees; rounded radius 0.38 mm; 2.8 mm constant section,
-then individual 0.4 mm conical ramps tapering toward the pocket entrance.
-Hex peg AF 2.94 mm; insertion 1.8 mm; final 0.3 mm tapers to AF 2.45 mm.
-The rim surrounds the upper 3.6 mm of the head, leaving at least 0.22 mm
-nominal mounting-surface clearance for a 3.82 mm minimum-height head.
+Bambu H2D, PLA Basic, 0.4 nozzle, suggested 0.16 layers, 4 walls,
+5 top/bottom layers and 30-40% infill. Flat outside face down;
+pocket and peg up. No supports. Print at 100% for nominal dimensions.
+Check the fit-test first; printer error and material shrinkage are not
+compensated in this revision. Hex AF3.02 has little clearance in the
+smallest sockets. Align before pressing; actual fit is not physically tested.
+For light finger adjustment; no torque rating claimed.
 
-COMPENSATED CAD DIMENSIONS
-Uniform X/Y/Z factor 1/(1-0.016) = 1.01626016.
-Knob maximum diameter 15.244 mm; height 7.724 mm.
-Head pocket diameter 7.520 mm; depth 3.659 mm; entry diameter 8.333 mm.
-Effective rib diameter 6.849594 mm; hex peg AF 2.988 mm; insertion 1.829 mm.
-The 1.6% shrinkage is user-specified, not verified by a physical print.
-Do not apply a second shrinkage scale in the slicer or filament profile.
-
-PRINT / INSTALL
-Bambu H2D; PLA Basic; calibrated profile; 0.4 mm nozzle; 0.16 mm layers;
-4 walls; 5 top/bottom layers; 30–40% infill. Flat exterior face on the bed,
-pocket and peg upward; no supports. Print at 100% scale.
-Print the fit-test cap first and let it cool fully. Verify effective rib
-opening and fit. Align hex before pressing on by hand; avoid forcing a
-misaligned peg. If fit needs changing, adjust the rib parameter rather than
-whole-part scale, and recheck the minimum-head interference requirement.
-
-For light finger adjustment. No rated insertion force, durability or
-tightening torque. Fit has not been physically validated. PLA can strip,
-creep or soften at elevated temperatures.
-
-Validation: STEP exports are checked as single valid solids and reimported.
+STEP validation checks: single valid solid after reimport, measured rib
+IDs at three axial sections, full 7.50 bore above ribs, hex AF3.02.
